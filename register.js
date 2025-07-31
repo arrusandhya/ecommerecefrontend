@@ -115,8 +115,14 @@ try {
     method:"POST",
     body:formData
   })
+  console.log(res);
   let data=await res.json()
-  console.log(data);
+  if(res.status==201){
+  alert(`${data.message}`)
+  }else{
+    alert("Something went wrong")
+  }
+
 
 } catch (error) {
   console.log(error);
