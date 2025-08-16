@@ -1,4 +1,5 @@
 import home from "./home.js"
+import register from "./register.js"
 
 const login=()=>{
     return `
@@ -18,7 +19,7 @@ const login=()=>{
             <span><i class="fa-solid fa-key"></i></span>
         </div>
 
-      
+      <a href="register" id="register">Click Here to Register</a>
 
         <div>
            <button>Submit</button>
@@ -31,6 +32,13 @@ const login=()=>{
 
 
 export let handelLoginbind=()=>{
+
+    const anchor=document.querySelector("#register")
+    anchor.addEventListener('click',(e)=>{
+        e.preventDefault()
+        history.pushState(null,"","/register")
+        root.innerHTML=register()
+    })
         const state={
   setState(name,value){
     this[name]=value
